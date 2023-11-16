@@ -31,6 +31,12 @@ const counterReducer = (state = 0, action) => {
 // store
 let store = createStore(counterReducer);
 
+// コンソールに新しい状態を出力
+store.subscribe(() => console.log(store.getState()));
+
+// dispatch
+store.dispatch(increment());
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
